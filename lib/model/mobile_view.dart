@@ -1,5 +1,6 @@
 /// Package imports
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -558,7 +559,7 @@ class _LayoutPageState extends State<LayoutPage> {
     for (int i = 0; i < list.length; i++) {
       tabChildren.add(
         ListView.builder(
-          cacheExtent: list.length.toDouble(),
+          scrollCacheExtent: ScrollCacheExtent.pixels(list.length.toDouble()),
           itemCount: list.length,
           itemBuilder: (BuildContext context, int position) {
             final String? status = list[position].status;

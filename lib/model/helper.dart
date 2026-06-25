@@ -879,7 +879,7 @@ Widget _buildCompanyLogoAndAppVersion(SampleModel model) {
         Align(
           alignment: Alignment.bottomCenter,
           child: Text(
-            'Version 28.1.33',
+            'Version 34.1.29',
             style: TextStyle(
               color: model.drawerTextIconColor,
               fontSize: 12,
@@ -972,7 +972,7 @@ Widget buildFooter(BuildContext context, SampleModel model) {
             Container(
               padding: const EdgeInsets.only(top: 10),
               child: Text(
-                'Copyright © 2001 - 2025 Syncfusion® Inc.',
+                'Copyright © 2001 - 2026 Syncfusion® Inc.',
                 style: TextStyle(
                   color: model.themeData.colorScheme.onSurfaceVariant,
                   fontSize: 12,

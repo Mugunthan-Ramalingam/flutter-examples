@@ -44,22 +44,17 @@ class _ShiftSchedulerState extends SampleViewState {
   // resource view properties
   double _resourceViewWidth = 200;
   double _resourceViewHeight = 100;
-
-  // new properties: size and visible resource count
-  double _resourceSize = 100;
   int _visibleResourceCount = 3;
 
   // enable flags for each property (controls whether the selected value is applied)
   bool _enableWidth = true;
   bool _enableHeight = true;
-  bool _enableSize = false;
   bool _enableVisibleCount = false;
 
   final List<double> _widthOptions = <double>[100, 150, 200, 250, 300, 500];
   final List<double> _heightOptions = <double>[50, 100, 200, 300, 400, 500];
 
   // options for the new properties
-  final List<double> _sizeOptions = <double>[50, 75, 100, 150, 200, 300];
   final List<int> _visibleResourceCountOptions = <int>[
     1,
     2,
@@ -340,63 +335,6 @@ class _ShiftSchedulerState extends SampleViewState {
           );
         }
 
-        Widget sizeRow() {
-          final Color labelColor = _enableSize
-              ? model.textColor
-              : model.textColor.withValues(alpha: 0.5);
-          return Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            textDirection: isRtl ? TextDirection.rtl : TextDirection.ltr,
-            children: <Widget>[
-              Checkbox(
-                value: _enableSize,
-                onChanged: (bool? v) {
-                  setState(() => _enableSize = v ?? false);
-                  stateSetter(() {});
-                },
-              ),
-              const SizedBox(width: 8),
-              Expanded(
-                child: Text(
-                  'Size',
-                  softWrap: false,
-                  textAlign: isRtl ? TextAlign.right : TextAlign.left,
-                  style: TextStyle(fontSize: 16.0, color: labelColor),
-                ),
-              ),
-              const SizedBox(width: 12),
-              DropdownButton<double>(
-                dropdownColor: model.drawerBackgroundColor,
-                focusColor: Colors.transparent,
-                underline: Container(color: const Color(0xFFBDBDBD), height: 1),
-                value: _resourceSize,
-                items: _sizeOptions
-                    .map(
-                      (double v) => DropdownMenuItem<double>(
-                        value: v,
-                        child: Text(
-                          v.toInt().toString(),
-                          style: TextStyle(
-                            color: _enableSize
-                                ? model.textColor
-                                : model.textColor.withValues(alpha: 0.5),
-                          ),
-                          textAlign: isRtl ? TextAlign.right : TextAlign.left,
-                        ),
-                      ),
-                    )
-                    .toList(),
-                onChanged: _enableSize
-                    ? (double? v) {
-                        setState(() => _resourceSize = v ?? _resourceSize);
-                        stateSetter(() {});
-                      }
-                    : null,
-              ),
-            ],
-          );
-        }
-
         return ListView(
           shrinkWrap: true,
           children: <Widget>[
@@ -408,9 +346,6 @@ class _ShiftSchedulerState extends SampleViewState {
                 final bool val = v ?? false;
                 setState(() {
                   _enableWidth = val;
-                  if (_enableWidth && _enableHeight) {
-                    _enableSize = false;
-                  }
                 });
                 stateSetter(() {});
               },
@@ -429,9 +364,6 @@ class _ShiftSchedulerState extends SampleViewState {
                 final bool val = v ?? false;
                 setState(() {
                   _enableHeight = val;
-                  if (_enableWidth && _enableHeight) {
-                    _enableSize = false;
-                  }
                 });
                 stateSetter(() {});
               },
@@ -442,8 +374,6 @@ class _ShiftSchedulerState extends SampleViewState {
               display: (double v) => v.toInt().toString(),
             ),
             const SizedBox(height: 8),
-            // Size
-            sizeRow(),
             const SizedBox(height: 8),
             // Visible count (when enabled, enforce rules)
             Row(
@@ -459,7 +389,6 @@ class _ShiftSchedulerState extends SampleViewState {
                       if (val) {
                         _enableWidth = true;
                         _enableHeight = false;
-                        _enableSize = false;
                       }
                     });
                     stateSetter(() {});
@@ -849,7 +778,6 @@ class _ShiftSchedulerState extends SampleViewState {
       resourceViewSettings: ResourceViewSettings(
         width: _enableWidth ? _resourceViewWidth : null,
         height: _enableHeight ? _resourceViewHeight : null,
-        size: _enableSize ? _resourceSize : 75,
         visibleResourceCount: _enableVisibleCount ? _visibleResourceCount : -1,
       ),
     );
