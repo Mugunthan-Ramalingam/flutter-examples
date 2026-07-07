@@ -3,8 +3,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:web/web.dart';
 
-// ignore: avoid_classes_with_only_static_members
 ///To save the Excel file in the device
+// ignore: avoid_classes_with_only_static_members
 class FileSaveHelper {
   ///To save the Excel file in the device
   static Future<void> saveAndLaunchFile(

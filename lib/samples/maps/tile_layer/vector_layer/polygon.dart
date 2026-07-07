@@ -421,7 +421,7 @@ class _ExpandedButtonState extends State<_ExpandedButton>
   Widget get _text => SizeTransition(
     sizeFactor: _animation,
     axis: Axis.horizontal,
-    axisAlignment: -1.0,
+    alignment: Alignment.centerLeft,
     child: Center(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10.0),

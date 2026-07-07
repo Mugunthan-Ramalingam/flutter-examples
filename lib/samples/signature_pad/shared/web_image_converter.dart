@@ -6,8 +6,8 @@ import 'dart:ui' as ui;
 import 'package:syncfusion_flutter_signaturepad/signaturepad.dart';
 import 'package:web/web.dart' as web;
 
-// ignore: avoid_classes_with_only_static_members
 /// Convert to image format.
+// ignore: avoid_classes_with_only_static_members
 class ImageConverter {
   /// toImage
   static Future<Uint8List> toImage({

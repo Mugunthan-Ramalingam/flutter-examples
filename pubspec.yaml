@@ -1,7 +1,7 @@
 
 name: flutter_examples
 description: This project contains the Syncfusion Flutter UI widgets examples.
-version: 33.1.44
+version: 34.1.29
 homepage: https://github.com/syncfusion/flutter-examples
 
 environment:
@@ -99,18 +99,18 @@ dependencies:
   flutter_markdown: ^0.7.4+1
   google_generative_ai: ^0.4.6
   path_provider_foundation: ^2.1.0
-  syncfusion_localizations: ^33.1.44
-  syncfusion_flutter_datagrid_export: ^33.1.44
-  syncfusion_flutter_calendar: ^33.1.44
-  syncfusion_flutter_datepicker: ^33.1.44
-  syncfusion_flutter_charts: ^33.1.44
-  syncfusion_flutter_gauges: ^33.1.44
-  syncfusion_flutter_sliders: ^33.1.44
-  syncfusion_flutter_pdf: ^33.1.44
-  syncfusion_flutter_barcodes: ^33.1.44
-  syncfusion_officechart: ^33.1.44
-  syncfusion_flutter_maps: ^33.1.44
-  syncfusion_flutter_signaturepad: ^33.1.44
-  syncfusion_flutter_pdfviewer: ^33.1.44
-  syncfusion_flutter_treemap: ^33.1.44
-  syncfusion_flutter_chat: ^33.1.44
+  syncfusion_localizations: ^34.1.29
+  syncfusion_flutter_datagrid_export: ^34.1.29
+  syncfusion_flutter_calendar: ^34.1.29
+  syncfusion_flutter_datepicker: ^34.1.29
+  syncfusion_flutter_charts: ^34.1.29
+  syncfusion_flutter_gauges: ^34.1.29
+  syncfusion_flutter_sliders: ^34.1.29
+  syncfusion_flutter_pdf: ^34.1.29
+  syncfusion_flutter_barcodes: ^34.1.29
+  syncfusion_officechart: ^34.1.29
+  syncfusion_flutter_maps: ^34.1.29
+  syncfusion_flutter_signaturepad: ^34.1.29
+  syncfusion_flutter_pdfviewer: ^34.1.29
+  syncfusion_flutter_treemap: ^34.1.29
+  syncfusion_flutter_chat: ^34.1.29

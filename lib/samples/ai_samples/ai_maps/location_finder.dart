@@ -233,7 +233,7 @@ class _MapLocationFinderState extends SampleViewState
                             color: Colors.transparent,
                             child: SizeTransition(
                               sizeFactor: _sizeAnimation,
-                              axisAlignment: -1.0,
+                              alignment: Alignment.topCenter,
                               child: Container(
                                 width: model.isMobile ? width * 0.8 : 250,
                                 decoration: BoxDecoration(

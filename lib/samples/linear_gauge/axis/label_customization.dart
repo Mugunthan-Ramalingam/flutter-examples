@@ -300,6 +300,7 @@ class _GaugeLabelCustomizationState extends SampleViewState {
 
   /// Returns the segmented view for linear gauge orientation.
   Widget _buildSegmentedView() {
+    final Brightness brightness = Theme.of(context).brightness;
     return Center(
       child: CupertinoSegmentedControl<bool>(
         selectedColor: model.primaryColor,
@@ -310,7 +311,11 @@ class _GaugeLabelCustomizationState extends SampleViewState {
             child: Text(
               'Horizontal',
               style: TextStyle(
-                color: _isHorizontalOrientation ? Colors.white : Colors.black,
+                color: _isHorizontalOrientation
+                    ? Colors.white
+                    : brightness == Brightness.dark
+                    ? Colors.white
+                    : Colors.black,
               ),
             ),
           ),
@@ -319,7 +324,11 @@ class _GaugeLabelCustomizationState extends SampleViewState {
             child: Text(
               'Vertical',
               style: TextStyle(
-                color: _isHorizontalOrientation ? Colors.black : Colors.white,
+                color: _isHorizontalOrientation
+                    ? brightness == Brightness.dark
+                          ? Colors.white
+                          : Colors.black
+                    : Colors.white,
               ),
             ),
           ),
